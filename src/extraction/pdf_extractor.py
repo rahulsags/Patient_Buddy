@@ -14,15 +14,7 @@ class PDFExtractor:
         self.use_ocr_fallback = True  # Set to True to try OCR if text extraction fails
     
     def extract(self, pdf_path):
-        """
-        Extract medical parameters from a PDF file
         
-        Args:
-            pdf_path (str): Path to the PDF file
-            
-        Returns:
-            dict: Dictionary of extracted medical parameters
-        """
         # First try to extract text directly
         text = self._extract_text(pdf_path)
         
@@ -40,7 +32,7 @@ class PDFExtractor:
         return parameters
     
     def _extract_text(self, pdf_path):
-        """Extract text from PDF using PyPDF2"""
+        
         try:
             with open(pdf_path, 'rb') as file:
                 reader = PyPDF2.PdfReader(file)
@@ -53,7 +45,7 @@ class PDFExtractor:
             return ""
     
     def _extract_text_with_ocr(self, pdf_path):
-        """Extract text from PDF using OCR"""
+        
         try:
             # Create a temporary directory for the images
             with tempfile.TemporaryDirectory() as temp_dir:

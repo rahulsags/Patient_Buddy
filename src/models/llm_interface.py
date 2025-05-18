@@ -8,7 +8,6 @@ class LLMInterface:
         self._check_ollama()
     
     def _check_ollama(self):
-        """Check if Ollama is installed and the model is available"""
         try:
             result = subprocess.run(["ollama", "list"], check=True, capture_output=True, text=True)
             if self.model_name not in result.stdout:
@@ -20,26 +19,14 @@ class LLMInterface:
             print(f"Error checking Ollama: {e}")
     
     def get_answer(self, question, parameters=None):
-        """
-        Get an answer to a medical question based on extracted parameters
-        
-        Args:
-            question (str): The question to answer
-            parameters (dict): Dictionary of extracted parameters
-            
-        Returns:
-            str: Answer to the question
-        """
-        # Try rule-based answering first
+      
         rule_based_answer = self._rule_based_answer(question, parameters)
         if rule_based_answer:
             return rule_based_answer
         
-        # Fall back to LLM
         return self._query_llm(question, parameters)
     
     def _rule_based_answer(self, question, parameters):
-        """Try to answer simple questions using rules"""
         if not parameters:
             return None
         
@@ -75,7 +62,6 @@ class LLMInterface:
         return None
     
     def _query_llm(self, question, parameters):
-        """Query the LLM for an answer"""
         try:
             # Build prompt with context from parameters
             prompt = "You are a helpful medical assistant. "
@@ -97,7 +83,7 @@ class LLMInterface:
                 ["ollama", "run", self.model_name, prompt],
                 capture_output=True,
                 text=True,
-                timeout=30
+                timeout=45
             )
             
             return result.stdout.strip()

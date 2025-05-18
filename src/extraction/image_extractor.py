@@ -13,15 +13,7 @@ class ImageExtractor:
         pass
     
     def extract(self, image_path):
-        """
-        Extract medical parameters from an image file
-        
-        Args:
-            image_path (str): Path to the image file
-            
-        Returns:
-            dict: Dictionary of extracted medical parameters
-        """
+    
         
         text = self._extract_text(image_path)
         

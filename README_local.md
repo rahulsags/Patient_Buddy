@@ -37,8 +37,7 @@ medical-ai-assistant
 │   ├── extracted
 │   └── cache
 ├── tests
-│   ├── __init__.py
-│   ├── test_extraction.py
+│   ├── __init__.pys
 │   └── test_llm.py
 ├── requirements.txt
 ├── setup.py

@@ -18,15 +18,7 @@ def get_pattern(parameter):
 
 # Function to extract all medical parameters from text
 def extract_parameters(text):
-    """
-    Extract medical parameters from text using regex patterns
     
-    Args:
-        text (str): Text to extract parameters from
-        
-    Returns:
-        dict: Dictionary of extracted parameters with their values and units
-    """
     results = {}
     
     for param, pattern in regex_patterns.items():

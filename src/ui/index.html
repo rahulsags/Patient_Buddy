@@ -126,10 +126,8 @@
                     } else {
                         uploadStatus.innerHTML = '<div class="alert alert-success">File processed successfully!</div>';
                         
-                        // Display parameters
                         displayParameters(data.parameters);
                         
-                        // Enable chat functionality
                         questionInput.disabled = false;
                         askButton.disabled = false;
                     }
@@ -152,16 +150,12 @@
                 
                 if (!question) return;
                 
-                // Add user message to chat
                 addMessageToChat(question, true);
                 
-                // Clear input
                 questionInput.value = '';
                 
-                // Add loading indicator
                 const loadingId = addLoadingIndicator();
                 
-                // Send question to server
                 fetch('/ask', {
                     method: 'POST',
                     headers: {
@@ -171,17 +165,13 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                    // Remove loading indicator
                     removeLoadingIndicator(loadingId);
                     
-                    // Add bot response to chat
                     addMessageToChat(data.answer, false);
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    // Remove loading indicator
                     removeLoadingIndicator(loadingId);
-                    // Add error message
                     addMessageToChat('Sorry, an error occurred while processing your question.', false);
                 });
             }
@@ -193,7 +183,6 @@
                 
                 chatContainer.appendChild(messageDiv);
                 
-                // Scroll to bottom
                 chatContainer.scrollTop = chatContainer.scrollHeight;
             }
             

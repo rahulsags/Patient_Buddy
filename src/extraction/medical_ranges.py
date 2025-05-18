@@ -1,51 +1,46 @@
 
 medical_ranges = {
       "Haemoglobin": {
-        "normal_range": (12, 16),  # g/dL
+        "normal_range": (12, 16),  
         "unit": "g/dL"
     },
     "Hemoglobin": {
-        "normal_range": (12, 16),  # g/dL
-        "unit": "g/dL"
+        "normal_range": (12, 16),  
     },
     "Hb": {
-        "normal_range": (12, 16),  # g/dL
-        "unit": "g/dL"
+        "normal_range": (12, 16),  
     },
     "Hematocrit": {
-        "normal_range": (36, 50),  # %
+        "normal_range": (36, 50),
         "unit": "%"
     },
     "HCT": {
-        "normal_range": (36, 50),  # %
+        "normal_range": (36, 50),
         "unit": "%"
     },
     "MCV": {
-        "normal_range": (80, 100),  # fL
+        "normal_range": (80, 100), 
         "unit": "fL"
     },
     "MCH": {
-        "normal_range": (27, 31),  # pg
+        "normal_range": (27, 31),  
         "unit": "pg"
     },
     "WBC": {
-        "normal_range": (4.0, 11.0),  # x10^9/L
-        "unit": "x10^9/L"
+        "normal_range": (4.0, 11.0),  
     },
     "Platelets": {
-        "normal_range": (150, 450),  # x10^9/L
-        "unit": "x10^9/L"
+        "normal_range": (150, 450),  
     },
     "Glucose": {
-        "normal_range": (70, 100),  # mg/dL
-        "unit": "mg/dL"
+        "normal_range": (70, 100),  
     },
     "Cholesterol": {
-        "normal_range": (125, 200),  # mg/dL
+        "normal_range": (125, 200),  
         "unit": "mg/dL"
     },
     "Creatinine": {
-        "normal_range": (0.6, 1.2),  # mg/dL
+        "normal_range": (0.6, 1.2),  
         "unit": "mg/dL"
     }
 }
